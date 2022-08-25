@@ -1,26 +1,15 @@
 #ifndef _SNAKE_H
 #define _SNAKE_H
 #include "Field.h"
+#include<vector>
 
-const int MAX_LEN = 10;
+std::vector <std::pair <int, int>> create_snake(int b, int a, int m);
+
+void draw_snake(std::vector<std::vector<field_element>>& v, int b, int a);
+
+void draw_food(std::vector<std::vector<field_element>>& v, int b, int a);
 
 
-struct sElement {
-	int left;
-	int top;
-	int right;
-	int bottom;
-
-};
-struct Snake {
-	int arr[MAX_LEN];
-	sElement snake;
-	int len;
-
-};
-
-void create_snake(fElement& sqs, int i_x, int i_y, int len, int i);
-void draw_snake(Snake& sn);
 
 #endif;
 

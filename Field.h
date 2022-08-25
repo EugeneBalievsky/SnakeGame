@@ -1,20 +1,18 @@
 #ifndef _FIELD_H
 #define _FIELD_H
+#include<vector>
 
-const int MAX_X = 50;
-const int MAX_Y = 50;
-
-
-struct fElement {
-	int left;
-	int top;
-	int right;
-	int bottom;
-	
+struct field_element {
+    int left = left;
+    int top = top;
+    int right = right;
+    int bottom = bottom;
 };
 
-void create_field(int left, int top, int right, int bottom, int x, int y);
-void draw_field();
+std::vector<std::vector<field_element>> create_field();
+
+
+void game_over();
 
 
 

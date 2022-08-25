@@ -4,20 +4,18 @@
 #include <string>
 #include "include/graphics.h"
 
-Snake sns[MAX_LEN];
- 
-void create_snake(fElement& sqs, int i_x, int i_y, int len, int i) {
-	Snake sn;
-	sn.snake.left = sqs[i_x][i_y].left;
-	sn.snake.left = sqs[i_x][i_y].top;
-	sn.snake.left = sqs[i_x][i_y].right;
-	sn.snake.left = sqs[i_x][i_y].bottom;
-	sn.len = len;
-	sns[i] = sn;
+std::vector <std::pair <int, int>> create_snake(int b, int a, int m) {
+    std::vector <std::pair <int, int>> v(m);
+    v[0] = { b, a };
+    return v;
 }
-void draw_snake(Snake& sn) {
-	setfillstyle(SOLID_FILL, YELLOW);
-	for (int i = 0; i < sn.len; ++i) {
-		bar(sns[i].snake.left, sns[i].snake.top, sns[i].snake.right, sns[i].snake.bottom);
-	}
+
+void draw_snake(std::vector<std::vector<field_element>>& v, int b, int a) {
+            setfillstyle(SOLID_FILL, YELLOW);
+            bar(v[b][a].left, v[b][a].top, v[b][a].right, v[b][a].bottom);
+}
+ 
+void draw_food(std::vector<std::vector<field_element>>& v, int b, int a) {
+    setfillstyle(SOLID_FILL, RED);
+    bar(v[b][a].left, v[b][a].top, v[b][a].right, v[b][a].bottom);
 }

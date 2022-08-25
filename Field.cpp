@@ -2,24 +2,40 @@
 #include <iostream>
 #include <string>
 #include "include/graphics.h"
+#include<vector>
 
-fElement sqs[MAX_Y][MAX_X];
+std::vector<std::vector<field_element>> create_field() {
+    std::vector<std::vector<field_element>> v(53, std::vector<field_element>(53));
+    int y = 50;
+    for (int i = 1; i < 51; ++i) {
+        int x = 50;
+        for (int j = 1; j < 51; ++j) {
+            field_element curr;
+            curr.left = x;
+            curr.top = y;
+            curr.right = x + 16;
+            curr.bottom = y + 16;
+            v[i][j] = curr;
+            x += 16;
+        }
+        y += 16;
+    }
+    return v;
+}
 
-void create_field(int left, int top, int right, int bottom, int x, int y) {
-	fElement sq;
-	sq.left = left;
-	sq.top = top;
-	sq.right = right;
-	sq.bottom = bottom;
-	sqs[y][x] = sq;
+void game_over() {
+    setcolor(WHITE);
+    settextstyle(BOLD_FONT, HORIZ_DIR, 7);
+    outtextxy(200, 400, "GAME OVER!");
+    settextstyle(BOLD_FONT, HORIZ_DIR, 4);
+    outtextxy(350, 500, "PRESS ESC");
+    if (kbhit()) {
+        int key = getch();
+        if (key == KEY_ESC) {
+            return;
+        }
+    }
 }
-void draw_field() {
-	setcolor(BLUE);
-	for (int i = 0; i < MAX_Y; ++i) {
-		for (int j = 0; j < MAX_X; ++j) {
-			rectangle(sqs[i][j].left, sqs[i][j].top, sqs[i][j].right, sqs[i][j].bottom);
-		}
-	}
-	setcolor(WHITE);
-	rectangle(50, 50, 850, 850);
-}
+
+
+

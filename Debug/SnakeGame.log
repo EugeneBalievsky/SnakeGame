@@ -1,9 +1,3 @@
-﻿  Field.cpp
-  Snake.cpp
-C:\Users\EVGENE\source\repos\SnakeGame\Snake.cpp(11,25): error C2676: бинарный "[": "fElement" не определяет этот оператор или преобразование к типу приемлемо к встроенному оператору
-C:\Users\EVGENE\source\repos\SnakeGame\Snake.cpp(12,25): error C2676: бинарный "[": "fElement" не определяет этот оператор или преобразование к типу приемлемо к встроенному оператору
-C:\Users\EVGENE\source\repos\SnakeGame\Snake.cpp(13,25): error C2676: бинарный "[": "fElement" не определяет этот оператор или преобразование к типу приемлемо к встроенному оператору
-C:\Users\EVGENE\source\repos\SnakeGame\Snake.cpp(14,25): error C2676: бинарный "[": "fElement" не определяет этот оператор или преобразование к типу приемлемо к встроенному оператору
-  main.cpp
-C:\Users\EVGENE\source\repos\SnakeGame\main.cpp(11,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  Создание кода...
+﻿  main.cpp
+C:\Users\EVGENE\source\repos\SnakeGame\main.cpp(32,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  SnakeGame.vcxproj -> C:\Users\EVGENE\source\repos\SnakeGame\Debug\SnakeGame.exe
